@@ -2,15 +2,11 @@
   "keys": [
     {
       "kty": "RSA",
-      "use": "sig",
       "kid": "e266bb2e-039e-450a-8292-5da4c1d18db4",
+      "use": "sig",
       "alg": "RS256",
-      "n": "LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUFtcW9NMGhsOE5vVHhObFlQbmlGOApKSjhqNDl2d0ovdU5LVn>
+      "n": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiwMbf4kiEf1ARWAYKTvA\n7yhgYuKedGsG7VBI3VjksqEImlGFddu3PfNUdwKh6hWQ5qLMAQ1RLyJh+qDP7sbj\n5M4QrX2dnKeaP9ZvEuwaoqdmA/iOjTzorwqmedr4RNto0YRoqf7AyhVF9pav2Nsp\nuk/pf67xE/h5EKrq9BepclmrwMpS3m6eik9Z0cy22Dk893Iow5Ya/oKSCmLjuKs7\nACQXKEPPH/QDkC57U3JN1FFYcrFgig1+IFCQUaXVw3lVnvLIH6eBiVusPfqTHXrz\n/bVpvs9fzQPvGADsTaCiF6qYkYg9vOdbOVtYrA8S0R73O/t9w1a6WIQtl6/oOOoE\ngwIDAQAB\n-----END PUBLIC KEY-----\n",
       "e": "AQAB"
     }
   ]
-}
-
-
-
-
+}        
