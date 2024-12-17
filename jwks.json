@@ -1,13 +1,12 @@
-Generated JWKS:
 {
-  "keys": [
-    {
-      "kty": "RSA",
-      "kid": "b55aede6-1926-4c35-aff4-fd3140172723",
-      "use": "sig",
-      "alg": "RS256",
-      "n": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApjJjXmDyFoARrS6m6671\nidrVo4Q42La2LDYOi+wJcydU2UGgRUXHgNYKNEZ3akw+YwG/ytCBteMKPkNaMezD\n2FUSdKDZtbPRoaBiDF4JNj8oVUdGxuacMC4bKhYD3+/8zXIqjAuq5I0YbMJcjVcO\nSsHXtRGh7+RbU91bTitXm4cC4OK7WFROQU15hnxre3t4e56bphlkinKlXb4iRQI7\nwv7ZGqSWd/+FL6wtyyY1zvJEZoVto9ydqMJkEcIEV5tyCJxoPRlWqw3YvtTqUsvy\nuy8F/dLs2pHWwxQ5sQyajwpK5kNXXYedqU1WX6UbaRmDAXd/eqqbt9zYHvZFZqaE\nswIDAQAB\n-----END PUBLIC KEY-----\n",
-      "e": "AQAB"
-    }
-  ]
+    "keys": [
+        {
+            "kty": "RSA",
+            "n": "rab_1cQ-LEmgyOjQfOEI5NB6JWIMm4mYsl7aGqZh5dP142dfZ5-fS5Xkn8-cknA_oAiv501BA86nYrgMuzgfXX842DzsGScJsEkguRPeGMmEK5AlXaZ169tp-j-_pwcNrgnD3vMbm97XQuB4lTxqZUBZwkxZfeoTxJjqpXcwNN-HccY_pRj1WfpeR8H1VRigBUgLkyR3js7dEve5mRWtGl-VOE8B-eP33XcPFVzRgoFF-rJoSEVqo9uM2CTjYHM75SpLPO8UuuFFt9BkQaGaMWsSa-gx5o8y-DouWmyu8Dj4Fel2SU29X0CtnkGAWFvtkwt7OMWth9B6uEAe-Oa4iw",
+            "e": "AQAB",
+            "alg": "RS256",
+            "kid": "b55aede6-1926-4c35-aff4-fd3140172723",
+            "use": "sig"
+        }
+    ]
 }
