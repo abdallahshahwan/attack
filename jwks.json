@@ -1,12 +1,12 @@
 {
-  "keys": [
-    {
-      "kty": "RSA",
-      "kid": "e266bb2e-039e-450a-8292-5da4c1d18db4",
-      "use": "sig",
-      "alg": "RS256",
-      "n": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiwMbf4kiEf1ARWAYKTvA\n7yhgYuKedGsG7VBI3VjksqEImlGFddu3PfNUdwKh6hWQ5qLMAQ1RLyJh+qDP7sbj\n5M4QrX2dnKeaP9ZvEuwaoqdmA/iOjTzorwqmedr4RNto0YRoqf7AyhVF9pav2Nsp\nuk/pf67xE/h5EKrq9BepclmrwMpS3m6eik9Z0cy22Dk893Iow5Ya/oKSCmLjuKs7\nACQXKEPPH/QDkC57U3JN1FFYcrFgig1+IFCQUaXVw3lVnvLIH6eBiVusPfqTHXrz\n/bVpvs9fzQPvGADsTaCiF6qYkYg9vOdbOVtYrA8S0R73O/t9w1a6WIQtl6/oOOoE\ngwIDAQAB\n-----END PUBLIC KEY-----\n",
-      "e": "AQAB"
-    }
-  ]
-}        
+    "keys": [
+        {
+            "kty": "RSA",
+            "n": "rab_1cQ-LEmgyOjQfOEI5NB6JWIMm4mYsl7aGqZh5dP142dfZ5-fS5Xkn8-cknA_oAiv501BA86nYrgMuzgfXX842DzsGScJsEkguRPeGMmEK5AlXaZ169tp-j-_pwcNrgnD3vMbm97XQuB4lTxqZUBZwkxZfeoTxJjqpXcwNN-HccY_pRj1WfpeR8H1VRigBUgLkyR3js7dEve5mRWtGl-VOE8B-eP33XcPFVzRgoFF-rJoSEVqo9uM2CTjYHM75SpLPO8UuuFFt9BkQaGaMWsSa-gx5o8y-DouWmyu8Dj4Fel2SU29X0CtnkGAWFvtkwt7OMWth9B6uEAe-Oa4iw",
+            "e": "AQAB",
+            "alg": "RS256",
+            "kid": "b55aede6-1926-4c35-aff4-fd3140172723",
+            "use": "sig"
+        }
+    ]
+}
